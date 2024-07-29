@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleDeCinema.WebApp", "ControleDeCinema.WebApp\ControleDeCinema.WebApp.csproj", "{0C24BEAD-E887-42C2-B201-98BD938D7429}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Apresentação", "1. Apresentação", "{AD6B893E-6A7A-4B31-9FFA-52556755A9FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domínio", "2. Domínio", "{05C5EB32-EC73-4AB2-B668-A12537A3377F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Infraestrutura", "3. Infraestrutura", "{AC63808C-0F1B-4B90-81F9-BFC7D2FE48DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Testes", "4. Testes", "{FA1D1821-41FB-431E-9CDF-2D2E487C5799}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleDeCinema.Dominio", "ControleDeCinema.Dominio\ControleDeCinema.Dominio.csproj", "{ABB79544-3172-41B9-9B08-9EBC3A0C7C40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleDeCinema.Infra.Orm", "ControleDeCinema.Infra.Orm\ControleDeCinema.Infra.Orm.csproj", "{C34A50AF-ACCB-4098-B58C-34ADE49121EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 Unidade", "4.1 Unidade", "{E51F7C94-A773-4572-95DD-6C0CBB4E4D48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 Integração", "4.2 Integração", "{CCAE444C-9410-4964-9425-E5CC22D75C38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 Web", "1.1 Web", "{DAE0BB54-43C0-4E74-8AAD-A7781093F1FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleDeCinema.Testes.Unidade", "ControleDeCinema.Testes.Unidade\ControleDeCinema.Testes.Unidade.csproj", "{FA7B6D4C-BC70-4479-BCFA-14AADC918FC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleDeCinema.Testes.Integracao", "ControleDeCinema.Testes.Integracao\ControleDeCinema.Testes.Integracao.csproj", "{7319B624-9127-4ADA-986B-58084B4F1611}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C24BEAD-E887-42C2-B201-98BD938D7429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C24BEAD-E887-42C2-B201-98BD938D7429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C24BEAD-E887-42C2-B201-98BD938D7429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C24BEAD-E887-42C2-B201-98BD938D7429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB79544-3172-41B9-9B08-9EBC3A0C7C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB79544-3172-41B9-9B08-9EBC3A0C7C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB79544-3172-41B9-9B08-9EBC3A0C7C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB79544-3172-41B9-9B08-9EBC3A0C7C40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C34A50AF-ACCB-4098-B58C-34ADE49121EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C34A50AF-ACCB-4098-B58C-34ADE49121EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C34A50AF-ACCB-4098-B58C-34ADE49121EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C34A50AF-ACCB-4098-B58C-34ADE49121EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA7B6D4C-BC70-4479-BCFA-14AADC918FC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA7B6D4C-BC70-4479-BCFA-14AADC918FC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA7B6D4C-BC70-4479-BCFA-14AADC918FC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA7B6D4C-BC70-4479-BCFA-14AADC918FC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7319B624-9127-4ADA-986B-58084B4F1611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7319B624-9127-4ADA-986B-58084B4F1611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7319B624-9127-4ADA-986B-58084B4F1611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7319B624-9127-4ADA-986B-58084B4F1611}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C24BEAD-E887-42C2-B201-98BD938D7429} = {DAE0BB54-43C0-4E74-8AAD-A7781093F1FD}
+		{ABB79544-3172-41B9-9B08-9EBC3A0C7C40} = {05C5EB32-EC73-4AB2-B668-A12537A3377F}
+		{C34A50AF-ACCB-4098-B58C-34ADE49121EA} = {AC63808C-0F1B-4B90-81F9-BFC7D2FE48DD}
+		{E51F7C94-A773-4572-95DD-6C0CBB4E4D48} = {FA1D1821-41FB-431E-9CDF-2D2E487C5799}
+		{CCAE444C-9410-4964-9425-E5CC22D75C38} = {FA1D1821-41FB-431E-9CDF-2D2E487C5799}
+		{DAE0BB54-43C0-4E74-8AAD-A7781093F1FD} = {AD6B893E-6A7A-4B31-9FFA-52556755A9FE}
+		{FA7B6D4C-BC70-4479-BCFA-14AADC918FC0} = {E51F7C94-A773-4572-95DD-6C0CBB4E4D48}
+		{7319B624-9127-4ADA-986B-58084B4F1611} = {CCAE444C-9410-4964-9425-E5CC22D75C38}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C2D0DEE-44C5-4AF5-8050-6F57EFC1DC6E}
+	EndGlobalSection
+EndGlobal
