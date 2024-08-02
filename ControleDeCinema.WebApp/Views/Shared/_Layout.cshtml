@@ -2,7 +2,7 @@
     string caminho = Context.Request.Path;
 
     // var mesaAtivo = caminho.StartsWith("/mesa") ? "nav-link active" : "nav-link";
-    // var garcomAtivo = caminho.StartsWith("/garcom") ? "nav-link active" : "nav-link";
+    var funcionarioAtivo = caminho.StartsWith("/funcionario") ? "nav-link active" : "nav-link";
     // var produtoAtivo = caminho.StartsWith("/produto") ? "nav-link active" : "nav-link";
     // var contaAtivo = caminho.StartsWith("/conta") ? "nav-link active" : "nav-link";
 }
@@ -22,13 +22,10 @@
     <nav class="container">
         <header class="row row-cols-2 align-items-center my-3">
             <label class="fs-3 fw-semibold">Controle de Cinema</label>
-@* 
+
             <ul class="nav nav-pills d-grid d-md-flex justify-content-md-end">
-                <li class="nav-item"><a href="/mesa/listar" class="@mesaAtivo">Mesas</a></li>
-                <li class="nav-item"><a href="/garcom/listar" class="@garcomAtivo">Garçons</a></li>
-                <li class="nav-item"><a href="/produto/listar" class="@produtoAtivo">Produto</a></li>
-                <li class="nav-item"><a href="/conta/listar" class="@contaAtivo">Conta</a></li>
-            </ul> *@
+                <li class="nav-item"><a href="/funcionario/listar" class="@funcionarioAtivo">Funcionarios</a></li>
+            </ul>
         </header>
     </nav>
 
@@ -41,7 +38,7 @@
 
     @* Footer / Ródapé *@
     <footer class="border-top text-center mt-auto">
-        <p class="my-3">&copy; - 2024 - Controle de Cinema</p>
+        <p class="my-3 mt-2">&copy; - 2024 - Controle de Cinema</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
