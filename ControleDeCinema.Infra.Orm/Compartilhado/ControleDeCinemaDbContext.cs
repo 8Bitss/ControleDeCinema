@@ -109,7 +109,7 @@ public class ControleDeCinemaDbContext : DbContext
                 .HasForeignKey("Sala_Id")
                 .HasConstraintName("FK_TBSala_TBPoltrona")
                 .IsRequired()
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
         });
 
 

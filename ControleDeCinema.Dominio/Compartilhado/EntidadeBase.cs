@@ -7,5 +7,4 @@ public abstract class EntidadeBase
     public abstract void AtualizarInformacoes(EntidadeBase registroAtualizado);
 
     public abstract List<string> Validar();
-
 }

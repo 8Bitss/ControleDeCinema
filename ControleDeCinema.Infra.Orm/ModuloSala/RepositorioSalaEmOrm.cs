@@ -11,6 +11,14 @@ public class RepositorioSalaEmOrm : RepositorioBaseEmOrm<Sala>, IRepositorioSala
         
     }
 
+    public void Inserir(Sala registro, List<Poltrona> poltronas)
+    {
+        ObterRegistros().Add(registro);
+        registro.Poltronas = poltronas;
+
+        dbContext.SaveChanges();
+    }
+
     protected override DbSet<Sala> ObterRegistros()
     {
         return dbContext.Salas;

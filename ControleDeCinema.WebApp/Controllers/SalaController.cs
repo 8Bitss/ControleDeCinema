@@ -39,6 +39,13 @@ public class SalaController : Controller
 
         var sala = new Sala(inserirSalaVm.Capacidade);
 
+        List<Poltrona> poltronas = new List<Poltrona>();
+
+        for (int i = 1; i <= sala.Capacidade; i++)
+        {
+            poltronas.Add(new Poltrona());
+        }
+
         repositorioSala.Inserir(sala);
 
         HttpContext.Response.StatusCode = 201;
