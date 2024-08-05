@@ -1,6 +1,6 @@
 ﻿using ControleDeCinema.Dominio.ModuloFilme;
 using ControleDeCinema.Dominio.ModuloFuncionario;
-
+using ControleDeCinema.Dominio.ModuloSala;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -9,6 +9,8 @@ namespace ControleDeCinema.Infra.Orm.Compartilhado;
 public class ControleDeCinemaDbContext : DbContext
 {
     public DbSet<Funcionario> Funcionarios { get; set; }
+    public DbSet<Poltrona> Poltronas { get; set; }
+    public DbSet<Sala> Salas { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -54,7 +56,7 @@ public class ControleDeCinemaDbContext : DbContext
 
         modelBuilder.Entity<Funcionario>(funcionarioBuilder =>
         {
-            funcionarioBuilder.ToTable("TB Funcionario");
+            funcionarioBuilder.ToTable("TBFuncionario");
 
             funcionarioBuilder.Property(f => f.Id)
                 .IsRequired()
@@ -72,6 +74,44 @@ public class ControleDeCinemaDbContext : DbContext
                 .IsRequired()
                 .HasColumnType("varchar (200)");
         });
+
+        modelBuilder.Entity<Poltrona>(poltronaBuilder =>
+        {
+            poltronaBuilder.ToTable("TBPoltrona");
+
+            poltronaBuilder.Property(p => p.Id)
+                .IsRequired()
+                .ValueGeneratedOnAdd();
+
+            poltronaBuilder.Property(p => p.Status)
+                .IsRequired()
+                .HasColumnType("bit");
+        });
+
+        modelBuilder.Entity<Sala>(salaBuilder =>
+        {
+            salaBuilder.ToTable("TBSala");
+
+            salaBuilder.Property(s => s.Id)
+                .IsRequired()
+                .ValueGeneratedOnAdd();
+
+            salaBuilder.Property(s => s.Capacidade)
+                .IsRequired()
+                .HasColumnType("int");
+
+            salaBuilder.Property(s => s.QtdAssentosDisponiveis)
+                .IsRequired()
+                .HasColumnType("int");
+
+            salaBuilder.HasMany(s => s.Poltronas)
+                .WithOne()
+                .HasForeignKey("Sala_Id")
+                .HasConstraintName("FK_TBSala_TBPoltrona")
+                .IsRequired()
+                .OnDelete(DeleteBehavior.NoAction);
+        });
+
 
         base.OnModelCreating(modelBuilder);
     }

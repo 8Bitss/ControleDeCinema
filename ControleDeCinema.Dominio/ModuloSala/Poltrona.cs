@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿namespace ControleDeCinema.Dominio.ModuloSala;
 
-namespace ControleDeCinema.Dominio.ModuloSala
+public class Poltrona
 {
-    public class Poltrona
+    public int Id { get; set; }
+    public bool Status { get; set; }
+
+    public Poltrona(){}
+
+    public void AlterarStatus(Poltrona poltronaSelecionada)
     {
-        public bool Status
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        poltronaSelecionada.Status = false;
     }
 }
