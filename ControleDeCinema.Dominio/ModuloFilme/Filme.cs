@@ -1,53 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ControleDeCinema.Dominio.Compartilhado;
+﻿using ControleDeCinema.Dominio.Compartilhado;
+using Microsoft.VisualBasic;
 
-namespace ControleDeCinema.Dominio.ModuloFilme
+namespace ControleDeCinema.Dominio.ModuloFilme;
+
+public class Filme : EntidadeBase
 {
-    public class Filme : EntidadeBase
+    public string Titulo { get; set; }
+
+    public DateTime Duracao { get; set; }
+    public DateTime DataLancamento { get; set; }
+
+    public TipoGeneroEnum Genero { get; set; }
+
+
+    public Filme() { }
+
+    public Filme(string titulo, DateTime duracao, DateTime dataLancamento, TipoGeneroEnum genero)
     {
-        public string Titulo
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        Titulo = titulo;
+        Duracao = duracao;
+        DataLancamento = dataLancamento;
+        Genero = genero;
+    }
 
-        public DateTime Duracao
-        {
-            get => default;
-            set
-            {
-            }
-        }
+    public override void AtualizarInformacoes(EntidadeBase registroAtualizado)
+    {
+        Filme filmeAtualizado = (Filme)registroAtualizado;
 
-        public Genero Genero
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        Titulo = filmeAtualizado.Titulo;
+        Duracao = filmeAtualizado.Duracao;
+        DataLancamento = filmeAtualizado.DataLancamento;
+        Genero = filmeAtualizado.Genero;
+    }
 
-        public DateTime DataLancamento
-        {
-            get => default;
-            set
-            {
-            }
-        }
+    public override List<string> Validar()
+    {
+        List<string> erros = new List<string>();
 
-        public override void AtualizarInformacoes(EntidadeBase registroAtualizado)
-        {
-            throw new NotImplementedException();
-        }
+        if (string.IsNullOrEmpty(Titulo.Trim()))
+            erros.Add("O campo \"Título\" é obrigatório");
 
-        public override List<string> Validar()
-        {
-            throw new NotImplementedException();
-        }
+        if (Duracao == null)
+            erros.Add("O campo \"Duração\" é obrigatório");
+        
+        if (DataLancamento == null)
+            erros.Add("O campo \"Data de Lançamento\" é obrigatório");
+
+        if (Genero == null)
+            erros.Add("O campo \"Gênero\" é obrigatório");
+
+        return erros;
+    }
+
+    public override string ToString()
+    {
+        return Titulo;
     }
 }

@@ -11,6 +11,7 @@ public class ControleDeCinemaDbContext : DbContext
     public DbSet<Funcionario> Funcionarios { get; set; }
     public DbSet<Poltrona> Poltronas { get; set; }
     public DbSet<Sala> Salas { get; set; }
+    public DbSet<Filme> Filmes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -112,8 +113,34 @@ public class ControleDeCinemaDbContext : DbContext
                 .OnDelete(DeleteBehavior.Cascade);
         });
 
+        modelBuilder.Entity<Filme>(filmeBuilder =>
+        {
+            filmeBuilder.ToTable("TBFilme");
+
+            filmeBuilder.Property(f => f.Id)
+                .IsRequired()
+                .ValueGeneratedOnAdd();
+
+            filmeBuilder.Property(f => f.Titulo)
+                .IsRequired()
+                .HasColumnType("varchar (200)");
+
+            filmeBuilder.Property(f => f.Duracao)
+                .IsRequired()
+                .HasColumnType("datetime2");
+
+            filmeBuilder.Property(f => f.DataLancamento)
+                .IsRequired()
+                .HasColumnType("datetime2");
+
+            filmeBuilder.Property(f => f.Genero)
+                .IsRequired()
+                .HasConversion(
+                    g => g.ToString(),
+                    g => (TipoGeneroEnum)Enum.Parse(typeof(TipoGeneroEnum), g))
+                .HasColumnType("nvarchar(24)");
+        });
 
         base.OnModelCreating(modelBuilder);
     }
 }
-

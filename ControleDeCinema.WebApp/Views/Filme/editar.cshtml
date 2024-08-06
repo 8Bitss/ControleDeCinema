@@ -1,0 +1,69 @@
+﻿@model EditarFilmeViewModel
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Editar Filme";
+}
+
+<div class="row mt-3">
+    <div class="col-lg-6">
+        <form class="d-grid gap-4" asp-action="Editar">
+
+            <div class="mt-2">
+                <label class="control-label fw-semibold">Título do Filme:</label>
+                <input class="form-control" asp-for="Titulo" />
+                <span class="text-danger my-1" asp-validation-for="Titulo"></span>
+            </div>
+
+            <div class="mt-2">
+                <label class="control-label fw-semibold">Duração:</label>
+                <input class="form-control" type="time" asp-for="Duracao" />
+                <span class="text-danger my-1" asp-validation-for="Duracao"></span>
+            </div>
+            <div class="mt-2">
+                <label class="control-label fw-semibold">Data de Lançamento:</label>
+                <input class="form-control" type="date" asp-for="DataLancamento" />
+                <span class="text-danger my-1" asp-validation-for="DataLancamento"></span>
+            </div>
+
+            <div class="mt-2">
+            <label class="control-label fw-semibold">Genero:</label>
+            <select asp-for="Genero">
+                <option value="Acao">Ação</option>
+                <option value="Aventura">Aventura</option>
+                <option value="Comedia">Comédia</option>
+                <option value="Drama">Drama</option>
+                <option value="Terror">Terror</option>
+                <option value="FiccaoCientifica">Ficção Científica</option>
+                <option value="Fantasia">Fantasia</option>
+                <option value="Suspense">Suspense</option>
+                <option value="Romance">Romance</option>
+                <option value="Musical">Musical</option>
+                <option value="Animacao">Animação</option>
+                <option value="Documentario">Documentário</option>
+                <option value="Biografia">Biografia</option>
+                <option value="Historico">Histórico</option>
+                <option value="Policial">Policial</option>
+                <option value="Esportivo">Esportivo</option>
+                <option value="Familia">Família</option>
+                <option value="Guerra">Guerra</option>
+                <span class="text-danger my-1" asp-validation-for="Genero"></span>
+            </select>
+            </div>
+
+            <div class="mt-2 d-grid gap-2 d-md-block">
+                <button class="btn btn-primary px-5">
+                    <i class="bi bi-floppy-fill me-1"></i>
+                    Gravar
+                </button>
+
+                <a class="btn btn-secondary px-5" href="/filme/listar">
+                    <i class="bi bi-arrow-return-left me-1"></i>
+                    Voltar
+                </a>
+
+            </div>
+        </form>
+
+    </div>
+</div>

@@ -35,9 +35,4 @@ public class Sala : EntidadeBase
 
         return erros;
     }
-
-    public void AdicionarPoltrona(Poltrona poltrona)
-    {
-        Poltronas.Add(poltrona);
-    }
 }
